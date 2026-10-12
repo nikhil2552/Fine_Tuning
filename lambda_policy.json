@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudWatchLogsPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:eu-central-1:706769905020:log-group:/aws/lambda/FineTuned_Model:*"
+        },
+        {
+            "Sid": "InvokeSageMakerEndpoint",
+            "Effect": "Allow",
+            "Action": "sagemaker-runtime:InvokeEndpoint",
+            "Resource": "arn:aws:sagemaker:eu-central-1:706769905020:endpoint/dolly-endpoint-2026-09-04-04-12-18-824"
+        }
+    ]
+}
